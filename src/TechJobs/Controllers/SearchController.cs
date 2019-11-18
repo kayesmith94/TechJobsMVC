@@ -38,20 +38,7 @@ namespace TechJobs.Controllers
                 List<Dictionary<string, string>> jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
                 ViewBag.jobs = jobs;
                 return View("Index");
-            }
-            /*
-                After looking up the search results via the JobData class, 
-                you'll need to pass them into the Views/Search/Index.cshtml view. 
-                Note that this is not the default view for this action.You'll also need to pass 
-                ListController.columnChoices to the view, as is done in the Index method.*/
-            
+            }    
         }
-        
-     
-        public IActionResult VibeCheck(string searchTerm, string searchType)
-        {
-            return Content("vibe check"+searchType);
-        }
-    
     }
 }

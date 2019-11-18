@@ -30,21 +30,16 @@
 @if (ViewBag.jobs != null)
 {
     <h3>@ViewBag.jobs.Count Result(s)</h3>
-
-        <table class="job-listing">
             @foreach (Dictionary<String, String> job in ViewBag.jobs)
-            {//do I need a tbody?
-                foreach (KeyValuePair<string, string> colval in job)
+            {
+                <table class="job-listing">
+                @foreach (KeyValuePair<string, string> colval in job)
                 {
                     <tr>
                         <td>@colval.Key</td>
                         <td>@colval.Value</td>
                     </tr>
                 }
-                /*in order to get formatting right each job needs to be its own table*/
+                </table>
             }
-
-        </table>
-
-
     }
